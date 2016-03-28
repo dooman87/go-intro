@@ -2,8 +2,6 @@ package main
 import (
 	"fmt"
 	"github.com/dooman87/go-intro"
-	"os"
-	"log"
 	"time"
 )
 
@@ -35,14 +33,7 @@ func main() {
 	time.Sleep(10 * time.Second)
 
 	//Standard library
-	go intro.RunServer()
-	pid := os.Getpid();
-	fmt.Printf("PID: %d", pid)
-	proc, err := os.FindProcess(pid)
-	if err != nil {
-		log.Fatal(err)
-	}
-	proc.Wait()
+	intro.RunServer()
 }
 
 func greetingFactory() intro.Greeter {

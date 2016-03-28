@@ -9,6 +9,13 @@ https://plus.google.com/events/cahdv4rtr3gbunmbjobtarbsvb0
 $ go get github.com/dooman87/go-intro
 ```
 
+# Running in Docker
+
+```
+$ docker build -t go-intro .
+$ docker run  -it --rm -p 8080:8080 -v `pwd`:/go/src/github.com/dooman87/go-intro go-intro
+```
+
 # Description
 
 All demos run from `cmd/main.go`.
@@ -21,7 +28,7 @@ Demos include:
 * Static Types & Type Inference - types.go
 * Slices                        - slices.go
 * Maps                          - maps.go
-* Structs                       - *TODO*
+* Structs                       - interfaces.go
 * Interfaces                    - interfaces.go
 * Closures                      - closures.go
 * Go routines                   - goroutines.go
