@@ -10,12 +10,18 @@ func main() {
 
 	//Types
 	fmt.Println(intro.GetGreeting())
+	fmt.Println(intro.GetInferredGreeting())
 
 	//Interfaces
 	fmt.Println(greetingFactory().Greet())
 
 	//Closures
-	fmt.Printf("Sum: %d", intro.DoSum())
+	n := 3
+	getNumber := func() int {
+		return n
+	}
+	n = 4
+	fmt.Printf("Sum: %d", intro.Sum(getNumber, getNumber))
 
 	//Collections
 	intro.Slices()
